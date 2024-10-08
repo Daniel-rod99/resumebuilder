@@ -12,14 +12,14 @@ export default function App() {
   return (
     <>
       <motion.div
-        initial={{ x: -100 }}
+        initial={{ x: -300 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5 }}
         className="flex flex-col items-center justify-center min-h-screen gap-10 p-10 mb-3"
       >
         <div className="title">
           <motion.h1
-            initial={{ x: -200 }}
+            initial={{ x: -400 }}
             animate={{ x: 0 }}
             transition={{ duration: 0.7 }}
             className="text-5xl italic font-bold text-center uppercase"

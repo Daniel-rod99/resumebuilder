@@ -5,6 +5,7 @@ import { Button, Input } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import { PiUserCirclePlusLight } from "react-icons/pi";
+import { IoIosArrowDropdownCircle } from "react-icons/io";
 
 export default function FormBuilder() {
   const navigate = useNavigate();
@@ -24,12 +25,7 @@ export default function FormBuilder() {
               <PiUserCirclePlusLight className="transition cursor-pointer hover:scale-110" />
             </div>
             <div className="flex flex-col gap-3 lg:flex-row">
-              <Input
-                type="text"
-                label="First Name"
-                isRequired
-                className="text-[16px]"
-              />
+              <Input type="text" label="First Name" isRequired />
               <Input type="text" label="Last Name" isRequired />
             </div>
             <div className="flex flex-col gap-3 lg:flex-row">
@@ -39,8 +35,22 @@ export default function FormBuilder() {
             <Input type="text" label="Address" />
           </CardBody>
           <CardFooter>
-            <h1>hola</h1>
+            <h1 className="flex items-center gap-1 cursor-pointer hover:text-blue-500">
+              Add More Details <IoIosArrowDropdownCircle />
+            </h1>
           </CardFooter>
+          <CardBody>
+            <motion.div className="gap-3">
+              <div className="flex flex-col gap-3 lg:flex-row">
+                <Input type="text" label="City" />
+                <Input type="text" label="Postal Code" />
+              </div>
+              <div className="flex flex-col gap-3 lg:flex-row">
+                <Input type="text" label="Nationality" />
+                <Input type="text" label="Date Of Birth" />
+              </div>
+            </motion.div>
+          </CardBody>
         </Card>
       </motion.div>
       <motion.div className="flex mt-6 justify-evenly">
