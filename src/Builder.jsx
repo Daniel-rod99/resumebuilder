@@ -10,11 +10,11 @@ export default function Builder() {
       <AnimatePresence>
         <motion.div className="flex min-h-screen gap-5 p-3 pb-12 min-w-screen">
           <motion.div
-            initial={{ x: 300 }}
-            animate={{ x: 0 }}
-            exit={{ x: -300 }}
-            transition={{ duration: 0.5 }}
-            className=" w-[100%] md:w-[50%] min-h-full flex flex-col justify-center"
+            // initial={{ x: 300 }}
+            // animate={{ x: 0 }}
+            // exit={{ x: -300 }}
+            // transition={{ duration: 0.5 }}
+            className="w-full md:w-[50%] flex flex-col justify-center"
           >
             <PersonalDetails />
           </motion.div>
