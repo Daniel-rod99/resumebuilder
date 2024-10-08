@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, Input } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
+import { PiUserCirclePlusLight } from "react-icons/pi";
 
 export default function FormBuilder() {
   const navigate = useNavigate();
@@ -16,11 +17,19 @@ export default function FormBuilder() {
       <motion.div>
         <Card>
           <CardHeader>
-            <h1 className="text-2xl font-bold">Personal Information</h1>
+            <h1 className="text-2xl font-bold">Personal Details</h1>
           </CardHeader>
           <CardBody className="gap-3 ">
+            <div className="flex justify-center py-7 text-9xl">
+              <PiUserCirclePlusLight className="transition cursor-pointer hover:scale-110" />
+            </div>
             <div className="flex flex-col gap-3 lg:flex-row">
-              <Input type="text" label="Name" isRequired />
+              <Input
+                type="text"
+                label="First Name"
+                isRequired
+                className="text-[16px]"
+              />
               <Input type="text" label="Last Name" isRequired />
             </div>
             <div className="flex flex-col gap-3 lg:flex-row">
@@ -34,12 +43,12 @@ export default function FormBuilder() {
           </CardFooter>
         </Card>
       </motion.div>
-      <motion.div className="flex justify-between mt-6">
+      <motion.div className="flex mt-6 justify-evenly">
         <Button className="bgButtons" onClick={handleNavigateApp}>
-          <FaArrowLeft />
+          <FaArrowLeft /> Prev
         </Button>
         <Button className="bgButtons">
-          <FaArrowRight />
+          Next <FaArrowRight />
         </Button>
       </motion.div>
     </>

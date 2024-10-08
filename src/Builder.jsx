@@ -12,7 +12,7 @@ export default function Builder() {
           initial={{ x: 300 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.5 }}
-          className=" w-[100%] md:w-[50%] min-h-full"
+          className=" w-[100%] md:w-[50%] min-h-full flex flex-col justify-center"
         >
           <FormBuilder />
         </motion.div>
