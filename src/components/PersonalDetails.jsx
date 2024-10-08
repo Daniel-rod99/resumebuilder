@@ -10,7 +10,7 @@ import { IoIosArrowDropdownCircle } from "react-icons/io";
 import { DateInput } from "@nextui-org/react";
 import { CalendarDate } from "@internationalized/date";
 
-export default function FormBuilder() {
+export default function PersonalDetails() {
   const navigate = useNavigate();
   const handleNavigateApp = () => {
     navigate(-1);
