@@ -11,7 +11,8 @@ import { DatePicker } from "@nextui-org/date-picker";
 import { CalendarDate } from "@internationalized/date";
 import Profile from "./Profile";
 import Experience from "./Experience";
-
+import { Divider } from "@nextui-org/divider";
+import Education from "./Education";
 export default function PersonalDetails() {
   const navigate = useNavigate();
   const handleNavigateApp = () => {
@@ -47,11 +48,11 @@ export default function PersonalDetails() {
               <Input type="text" label="Address" isClearable />
             </CardBody>
             <CardFooter>
-              <motion.h1
+              <motion.h2
                 onClick={toggleShowMoreDetails}
-                className="flex items-center gap-1 text-blue-500 cursor-pointer"
+                className="flex items-center gap-3 mt-3 text-blue-500 cursor-pointer text-small"
               >
-                Add More Details
+                Add more details
                 <motion.span
                   initial={{ rotate: 0 }}
                   animate={{ rotate: showMoreDetails ? 180 : 0 }}
@@ -59,7 +60,7 @@ export default function PersonalDetails() {
                 >
                   <IoIosArrowDropdownCircle />
                 </motion.span>
-              </motion.h1>
+              </motion.h2>
             </CardFooter>
             <AnimatePresence>
               {showMoreDetails && (
@@ -90,6 +91,7 @@ export default function PersonalDetails() {
             </AnimatePresence>
 
             {/* Profile */}
+            <Divider className="w-full m-3" />
             <CardHeader>
               <h1 className="text-2xl font-bold">Professional Summary</h1>
             </CardHeader>
@@ -98,6 +100,7 @@ export default function PersonalDetails() {
             </CardBody>
 
             {/* Experience */}
+            <Divider className="m-3" />
             <CardHeader className="block">
               <h1 className="text-2xl font-bold ">Employment History</h1>
               <h3 className="text-gray-500 text-small">
@@ -108,6 +111,21 @@ export default function PersonalDetails() {
             <CardBody>
               <Experience />
             </CardBody>
+
+            {/* Education */}
+            <Divider className="m-3" />
+            <CardHeader className="block">
+              <h1 className="text-2xl font-bold ">Education</h1>
+              <h3 className="text-gray-500 text-small">
+                A varied education on your resume sums up the value that your
+                learnings and background will bring to job.
+              </h3>
+            </CardHeader>
+            <CardBody>
+              <Education />
+            </CardBody>
+
+            {/* End */}
           </Card>
         </motion.div>
       </motion.div>

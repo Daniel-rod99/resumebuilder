@@ -20,7 +20,7 @@ import {
 import { DateRangePicker } from "@nextui-org/date-picker";
 import { FaTrashAlt } from "react-icons/fa";
 
-export default function ItemExperience({ value, onDelete }) {
+export default function ItemEducation({ value, onDelete }) {
   const dragControls = useDragControls();
 
   const [showMoreDetails, setShowMoreDetails] = useState(false);
@@ -28,9 +28,9 @@ export default function ItemExperience({ value, onDelete }) {
     setShowMoreDetails(!showMoreDetails);
   };
 
-  const [jobTitle, setJobTitle] = useState("");
+  const [schoolTitle, setSchoolTitle] = useState("");
   const handleJobTitleChange = (e) => {
-    setJobTitle(e.target.value);
+    setSchoolTitle(e.target.value);
   };
 
   return (
@@ -53,7 +53,7 @@ export default function ItemExperience({ value, onDelete }) {
           >
             <CardHeader className="flex justify-between">
               <motion.h1 className="text-blue-500">
-                {jobTitle || "Not Specified"}
+                {schoolTitle || "Not Specified"}
               </motion.h1>
               <motion.div className="flex gap-3">
                 <Dropdown>
@@ -95,11 +95,11 @@ export default function ItemExperience({ value, onDelete }) {
                   <div className="flex flex-col gap-3 lg:flex-row">
                     <Input
                       type="text"
-                      label="Job Title"
-                      value={jobTitle}
+                      label="School"
+                      value={schoolTitle}
                       onChange={handleJobTitleChange}
                     />
-                    <Input type="Text" label="Employer" isClearable />
+                    <Input type="Text" label="Degree" isClearable />
                   </div>
                   <div className="flex flex-col gap-1 lg:gap-3 lg:flex-row">
                     <DateRangePicker
@@ -113,7 +113,7 @@ export default function ItemExperience({ value, onDelete }) {
                   </div>
                   <Textarea
                     label="Description"
-                    placeholder="e.g. Created and implemented lesson plans based on child-led interest and curiosities"
+                    placeholder="e.g. Graduated with High Honors"
                   />
                 </CardBody>
               </motion.div>

@@ -25,7 +25,7 @@ export default function Experience() {
         className="flex items-center gap-3 mt-3 text-blue-500 cursor-pointer text-small"
       >
         <FaPlus />{" "}
-        {experience.length === 0 ? "Add Employment" : "Add One More Employment"}
+        {experience.length === 0 ? "Add employment" : "Add one more employment"}
       </motion.h2>
     </>
   );
