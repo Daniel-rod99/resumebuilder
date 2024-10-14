@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardBody } from "@nextui-org/card";
 import { MdDragIndicator } from "react-icons/md";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
+import { GoKebabHorizontal } from "react-icons/go";
 import {
   motion,
   AnimatePresence,
@@ -8,10 +9,18 @@ import {
   useDragControls,
 } from "framer-motion";
 import { useState } from "react";
-import { Input, Textarea } from "@nextui-org/react";
+import {
+  Input,
+  Textarea,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+} from "@nextui-org/react";
 import { DateRangePicker } from "@nextui-org/date-picker";
+import { FaTrashAlt } from "react-icons/fa";
 
-export default function ItemExperience({ value }) {
+export default function ItemExperience({ value, onDelete }) {
   const dragControls = useDragControls();
 
   const [showMoreDetails, setShowMoreDetails] = useState(false);
@@ -30,10 +39,10 @@ export default function ItemExperience({ value }) {
         value={value}
         dragControls={dragControls}
         dragListener={false}
-        className="flex my-2"
+        className="flex my-2 select-none"
       >
         <MdDragIndicator
-          className="mt-3 text-2xl cursor-pointer"
+          className="mt-3 text-2xl select-none hover:cursor-grab"
           onPointerDown={(e) => dragControls.start(e)}
         />
         <Card className="w-full">
@@ -46,9 +55,30 @@ export default function ItemExperience({ value }) {
               <motion.h1 className="text-blue-500">
                 {jobTitle || "Not Specified"}
               </motion.h1>
-              <motion.span animate={{ rotate: showMoreDetails ? 180 : 0 }}>
-                <IoIosArrowDropdownCircle className="text-blue-500" />
-              </motion.span>
+              <motion.div className="flex gap-3">
+                <Dropdown>
+                  <DropdownTrigger>
+                    <span>
+                      <GoKebabHorizontal />
+                    </span>
+                  </DropdownTrigger>
+                  <DropdownMenu>
+                    <DropdownItem
+                      key="delete"
+                      color="danger"
+                      className="text-danger"
+                      onClick={() => onDelete(value)}
+                    >
+                      <span className="flex items-center gap-3">
+                        <FaTrashAlt /> Delete
+                      </span>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+                <motion.span animate={{ rotate: showMoreDetails ? 180 : 0 }}>
+                  <IoIosArrowDropdownCircle className="text-blue-500" />
+                </motion.span>
+              </motion.div>
             </CardHeader>
           </motion.div>
 

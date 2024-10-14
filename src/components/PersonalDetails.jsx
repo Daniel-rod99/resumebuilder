@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import { PiUserCirclePlusLight } from "react-icons/pi";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
-import { DateInput } from "@nextui-org/react";
+import { DatePicker } from "@nextui-org/date-picker";
 import { CalendarDate } from "@internationalized/date";
 import Profile from "./Profile";
 import Experience from "./Experience";
@@ -77,7 +77,7 @@ export default function PersonalDetails() {
                     </div>
                     <div className="flex flex-col gap-3 lg:flex-row">
                       <Input type="text" label="Nationality" isClearable />
-                      <DateInput
+                      <DatePicker
                         label={"Birth date"}
                         placeholderValue={new CalendarDate(1995, 11, 6)}
                         errorMessage="Please enter a valid date."
@@ -99,7 +99,7 @@ export default function PersonalDetails() {
 
             {/* Experience */}
             <CardHeader>
-              <h1 className="text-2xl font-bold">Employment History</h1>
+              <h1 className="text-2xl font-bold ">Employment History</h1>
             </CardHeader>
             <CardBody>
               <Experience />

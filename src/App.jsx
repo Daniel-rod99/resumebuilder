@@ -40,15 +40,6 @@ export default function App() {
         </div>
         <div className="flex gap-3 lg:gap-10 buttons">
           <Button
-            color="default"
-            radius="none"
-            size="lg"
-            auto
-            className="text-gray-400 transition hover:text-black hover:scale-110"
-          >
-            View Template
-          </Button>
-          <Button
             className="transition bgButtons hover:scale-110"
             size="lg"
             auto

@@ -9,24 +9,24 @@ export default function Experience() {
     setExperience((prev) => [...prev, prev.length + 1]);
   };
 
+  const handleDelete = (value) => {
+    setExperience((prev) => prev.filter((exp) => exp !== value));
+  };
+
   return (
     <>
-      <Reorder.Group
-        axis="y"
-        onReorder={setExperience}
-        values={experience}
-        className="mt-4"
-      >
-        {experience.map((item) => (
-          <ItemExperience key={item} value={item} />
+      <Reorder.Group axis="y" onReorder={setExperience} values={experience}>
+        {experience.map((value) => (
+          <ItemExperience key={value} value={value} onDelete={handleDelete} />
         ))}
       </Reorder.Group>
-      <motion.h1
+      <motion.h2
         onClick={addExperience}
         className="flex items-center gap-3 mt-3 text-blue-500 cursor-pointer text-small"
       >
-        <FaPlus /> Add One More Employment
-      </motion.h1>
+        <FaPlus />{" "}
+        {experience.length === 0 ? "Add Employment" : "Add One More Employment"}
+      </motion.h2>
     </>
   );
 }
