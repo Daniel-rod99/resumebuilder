@@ -38,7 +38,7 @@ export default function ItemExperience({ value, onDelete }) {
       <Reorder.Item
         value={value}
         dragControls={dragControls}
-        dragListener={false}
+        dragListener={true}
         className="flex my-2 select-none"
       >
         <MdDragIndicator

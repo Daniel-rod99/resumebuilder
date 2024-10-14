@@ -98,8 +98,12 @@ export default function PersonalDetails() {
             </CardBody>
 
             {/* Experience */}
-            <CardHeader>
+            <CardHeader className="block">
               <h1 className="text-2xl font-bold ">Employment History</h1>
+              <h3 className="text-gray-500 text-small">
+                Describe your relevant work experience from the last few years,
+                including your positions and achievements.
+              </h3>
             </CardHeader>
             <CardBody>
               <Experience />
