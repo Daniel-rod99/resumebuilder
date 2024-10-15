@@ -1,9 +1,9 @@
-import ItemExperience from "./ItemExperience";
+import EmploymentItem from "./EmploymentItem";
 import { motion, Reorder } from "framer-motion";
 import { FaPlus } from "react-icons/fa6";
 import { useState } from "react";
 
-export default function Experience() {
+export default function EmploymentHistory() {
   const [experience, setExperience] = useState([]);
   const addExperience = () => {
     setExperience((prev) => [...prev, prev.length + 1]);
@@ -17,7 +17,7 @@ export default function Experience() {
     <>
       <Reorder.Group axis="y" onReorder={setExperience} values={experience}>
         {experience.map((value) => (
-          <ItemExperience key={value} value={value} onDelete={handleDelete} />
+          <EmploymentItem key={value} value={value} onDelete={handleDelete} />
         ))}
       </Reorder.Group>
       <motion.h2

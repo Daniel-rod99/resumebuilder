@@ -20,7 +20,7 @@ import {
 import { DateRangePicker } from "@nextui-org/date-picker";
 import { FaTrashAlt } from "react-icons/fa";
 
-export default function ItemExperience({ value, onDelete }) {
+export default function EmploymentItem({ value, onDelete }) {
   const dragControls = useDragControls();
 
   const [showMoreDetails, setShowMoreDetails] = useState(false);

@@ -20,7 +20,7 @@ import {
 import { DateRangePicker } from "@nextui-org/date-picker";
 import { FaTrashAlt } from "react-icons/fa";
 
-export default function ItemEducation({ value, onDelete }) {
+export default function EducationItem({ value, onDelete }) {
   const dragControls = useDragControls();
 
   const [showMoreDetails, setShowMoreDetails] = useState(false);

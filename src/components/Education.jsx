@@ -1,4 +1,4 @@
-import ItemEducation from "./ItemEducation";
+import EducationItem from "./EducationItem";
 import { motion, Reorder } from "framer-motion";
 import { FaPlus } from "react-icons/fa6";
 import { useState } from "react";
@@ -17,7 +17,7 @@ export default function Education() {
     <>
       <Reorder.Group axis="y" onReorder={setEducation} values={education}>
         {education.map((value) => (
-          <ItemEducation key={value} value={value} onDelete={handleDelete} />
+          <EducationItem key={value} value={value} onDelete={handleDelete} />
         ))}
       </Reorder.Group>
       <motion.h2

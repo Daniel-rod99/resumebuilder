@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Divider } from "@nextui-org/divider";
 import Fotter from "./components/Fotter";
 import ResumePreview from "./components/ResumePreview";
-import PersonalDetails from "./components/PersonalDetails";
+import Information from "./Information";
 
 export default function Builder() {
   return (
@@ -16,7 +16,7 @@ export default function Builder() {
             transition={{ duration: 0.5 }}
             className="w-full md:w-[50%]"
           >
-            <PersonalDetails />
+            <Information />
           </motion.div>
           <motion.div
             initial={{ x: 400 }}
