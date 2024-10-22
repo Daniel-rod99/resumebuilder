@@ -33,20 +33,6 @@ export default function PersonalDetails() {
             <Input type="text" label="Address" isClearable />
           </CardBody>
 
-          <h2
-            onClick={toggleShowMoreDetails}
-            className="flex items-center gap-3 mt-3 text-blue-500 cursor-pointer text-small"
-          >
-            Add more details
-            <motion.span
-              initial={{ rotate: 0 }}
-              animate={{ rotate: showMoreDetails ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <IoIosArrowDown className="text-lg" />
-            </motion.span>
-          </h2>
-
           {/* MORE DETAILS */}
           <AnimatePresence>
             {showMoreDetails && (
@@ -75,6 +61,20 @@ export default function PersonalDetails() {
               </motion.div>
             )}
           </AnimatePresence>
+
+          <h2
+            onClick={toggleShowMoreDetails}
+            className="flex items-center gap-3 mt-3 text-blue-500 cursor-pointer text-small"
+          >
+            {showMoreDetails ? "Hide additional details" : "Add more details"}
+            <motion.span
+              initial={{ rotate: 0 }}
+              animate={{ rotate: showMoreDetails ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <IoIosArrowDown className="text-lg" />
+            </motion.span>
+          </h2>
         </div>
       </div>
     </>

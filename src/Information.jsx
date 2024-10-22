@@ -8,6 +8,8 @@ import ProfesionalSummary from "./components/ProfesionalSummary";
 import EmploymentHistory from "./components/EmploymentHistory";
 import PersonalDetails from "./components/PersonalDetails";
 import Education from "./components/Education";
+import Courses from "./components/Courses";
+import Languages from "./components/Languages";
 
 export default function Information() {
   const navigate = useNavigate();
@@ -61,6 +63,31 @@ export default function Information() {
             </CardHeader>
             <CardBody>
               <Education />
+            </CardBody>
+
+            {/* COURSES */}
+            <Divider className="m-3" />
+            <CardHeader className="block">
+              <h1 className="text-2xl font-bold ">Courses</h1>
+              <h3 className="text-gray-500 text-small">
+                Here you can add courses and certifications you have obtained
+                throughout your career.
+              </h3>
+            </CardHeader>
+            <CardBody>
+              <Courses />
+            </CardBody>
+
+            {/* LANGUAGES */}
+            <Divider className="m-3" />
+            <CardHeader className="block">
+              <h1 className="text-2xl font-bold ">Languages</h1>
+              <h3 className="text-gray-500 text-small">
+                Add all the languages you can speak and their proficiency level.
+              </h3>
+            </CardHeader>
+            <CardBody>
+              <Languages />
             </CardBody>
 
             {/* END */}
