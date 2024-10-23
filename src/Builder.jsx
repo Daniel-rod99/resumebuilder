@@ -1,5 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Divider } from "@nextui-org/divider";
+import { IoDocumentTextOutline } from "react-icons/io5";
+import { Button } from "@nextui-org/react";
 import Fotter from "./components/Fotter";
 import ResumePreview from "./components/ResumePreview";
 import Information from "./Information";
@@ -35,6 +37,20 @@ export default function Builder() {
             className="hidden w-[50%] min-h-full md:block"
           >
             <ResumePreview />
+          </motion.div>
+
+          {/* BUTTON DOWNLOAD AND PREVIEW*/}
+          <motion.div
+            initial={{ x: 1000 }}
+            animate={{ x: 0 }}
+            exit={{ x: -700 }}
+            transition={{ duration: 0.7 }}
+            className="fixed flex items-center gap-4 bottom-24 right-6 md:hidden"
+          >
+            <Button isIconOnly color="primary" aria-label="Like">
+              {" "}
+              <IoDocumentTextOutline className="text-xl" />
+            </Button>
           </motion.div>
         </motion.div>
       </AnimatePresence>
