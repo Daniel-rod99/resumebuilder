@@ -5,12 +5,34 @@ import { Button } from "@nextui-org/react";
 import Fotter from "./components/Fotter";
 import ResumePreview from "./components/ResumePreview";
 import Information from "./Information";
+import { useState } from "react";
 
 export default function Builder() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    jobTitle: "",
+    address: "",
+    city: "",
+    postalCode: "",
+    nationality: "",
+    birthDate: "",
+  });
+
+  const handleInputChange = (field, value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: value,
+    }));
+  };
+
   return (
     <>
       <AnimatePresence>
-        <motion.div className="flex min-h-screen gap-5 p-3 pb-12 min-w-screen">
+        <motion.div className="flex min-h-screen gap-0 p-3 pb-12 md:gap-5 min-w-screen">
+          {/* INFORMATION */}
           <motion.div
             initial={{ x: 300 }}
             animate={{ x: 0 }}
@@ -18,8 +40,13 @@ export default function Builder() {
             transition={{ duration: 0.5 }}
             className="w-full md:w-[50%]"
           >
-            <Information />
+            <Information
+              formData={formData}
+              handleInputChange={handleInputChange}
+            />
           </motion.div>
+
+          {/* DIVIDER */}
           <motion.div
             initial={{ x: 400 }}
             animate={{ x: 0 }}
@@ -29,15 +56,19 @@ export default function Builder() {
           >
             <Divider orientation="vertical" />
           </motion.div>
-          <motion.div
-            initial={{ x: 700 }}
-            animate={{ x: 0 }}
-            exit={{ x: -700 }}
-            transition={{ duration: 0.7 }}
-            className="hidden w-[50%] min-h-full md:block"
-          >
-            <ResumePreview />
-          </motion.div>
+
+          {/* RESUME PREVIEW */}
+          <div className="md:w-[50%] md:flex justify-center h-screen">
+            <motion.div
+              initial={{ x: 700 }}
+              animate={{ x: 0 }}
+              exit={{ x: -700 }}
+              transition={{ duration: 0.7 }}
+              className="hidden w-[1000px] bg-red-200 md:top-8 md:block"
+            >
+              <ResumePreview formData={formData} />
+            </motion.div>
+          </div>
 
           {/* BUTTON DOWNLOAD AND PREVIEW*/}
           <motion.div

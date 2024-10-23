@@ -11,7 +11,7 @@ import Education from "./components/Education";
 import Courses from "./components/Courses";
 import Languages from "./components/Languages";
 
-export default function Information() {
+export default function Information({ formData, handleInputChange }) {
   const navigate = useNavigate();
   const handleNavigateApp = () => {
     navigate(-1);
@@ -27,7 +27,10 @@ export default function Information() {
               <h1 className="text-2xl font-bold">Personal Details</h1>
             </CardHeader>
             <CardBody>
-              <PersonalDetails />
+              <PersonalDetails
+                formData={formData}
+                handleInputChange={handleInputChange}
+              />
             </CardBody>
 
             {/* PROFESIONAL SUMMARY */}
